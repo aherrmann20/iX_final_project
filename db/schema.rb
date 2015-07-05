@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705181617) do
+ActiveRecord::Schema.define(version: 20150705185457) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150705181617) do
     t.string   "surname"
     t.string   "video"
     t.string   "phone"
+    t.date     "birthday"
   end
 
 end

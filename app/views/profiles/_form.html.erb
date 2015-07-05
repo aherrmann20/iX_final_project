@@ -1,0 +1,57 @@
+<% if @profile.errors.any?%>
+	<div id = "error_explanation">
+		<h2>
+			<%= pluralize(@profile.errors.count, "error") %> prohibited your profile from being saved:
+		</h2>
+		<ul>
+			<% @profile.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= form_for @profile do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br>
+	</p>
+
+	<p>
+		<%= f.label :surname %><br>
+		<%= f.text_field :surname %><br>
+	</p>
+
+	<p>
+		<%= f.label :birthdate %><br>
+		<%= f.date_field :birthday %><br>
+
+	<!-- Add paperclip to upload photos -->
+	<p>
+		<%= f.label "Link to profile picture" %><br>
+		<%= f.text_field :profile_photo %><br>
+
+	<!-- add more drop down options -->
+	<!-- find out how to "add another" -->
+	<p>
+		<%= f.select :talent, options_for_select(%w[piano violin tenor soprano]) %>
+	</p>
+
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_area :description %><br>
+	</p>
+
+	<p>
+		<%= f.label "Link(s) to Performance Videos" %><br>
+		<%= f.text_area :video %>
+	</p>
+
+	<p>
+		<%= f.label "Phone number (optional)" %><br>
+		<%= f.telephone_field :phone %><br>
+	</p>
+
+	<p>
+
+
