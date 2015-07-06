@@ -11,49 +11,45 @@
 	</div>
 <% end %>
 
-<%= form_for @profile do |f| %>
+<%= simple_form_for @profile do |f| %>
 	<p>
-		<%= f.label :name %><br>
-		<%= f.text_field :name %><br>
+		<%= f.input :name %><br>
 	</p>
 
 	<p>
-		<%= f.label :surname %><br>
-		<%= f.text_field :surname %><br>
+		<%= f.input :surname %><br>
 	</p>
 
 	<p>
-		<%= f.label :birthdate %><br>
-		<%= f.date_field :birthday %><br>
+		<%= f.input :birthday, label: 'Date of birth' %>
+	</p>
 
 	<!-- Add paperclip to upload photos -->
 	<p>
-		<%= f.label "Link to profile picture" %><br>
-		<%= f.text_field :profile_photo %><br>
+		<%= f.input :profile_photo, label: 'Link to your profile picture' %><br>
+	</p>
 
 	<!-- add more drop down options -->
 	<!-- find out how to "add another" -->
+
 	<p>
-		<%= f.select :talent, options_for_select(%w[piano violin tenor soprano]) %>
+		<%= f.select :talent, options_for_select(%w[piano violin tenor soprano drums])  %><br>
 	</p>
 
 	<p>
-		<%= f.label :description %><br>
-		<%= f.text_area :description %><br>
+		<%= f.input :description, :as => :text, placeholder: 'Occupation, hobbies ...' %><br>
 	</p>
 
 	<p>
-		<%= f.label "Link(s) to Performance Videos" %><br>
-		<%= f.text_area :video %>
+		<%= f.input :video, label: "Link(s) to Performance Videos" %><br>
 	</p>
 
 	<p>
-		<%= f.label "Phone number (optional)" %><br>
-		<%= f.telephone_field :phone %><br>
+		<%= f.input :phone, label: "Phone number (optional)" %><br>
 	</p>
 
 	<p>
-		<%= f.submit %>
+		<%= f.button :submit %>
 	</p>
 <% end %>
 
