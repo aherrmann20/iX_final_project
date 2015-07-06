@@ -1,11 +1,11 @@
 class ProfilesController < ApplicationController
   before_action :set_user
-  
+
   def index
   end
 
   def new
-    @profile = Profie.new
+    @profile = Profile.new
   end
 
   def create
@@ -44,4 +44,11 @@ class ProfilesController < ApplicationController
   end
 
   private
+  def profile_params
+    params.require(:profile).permit(:name, :surname, :instruments, :email, :description)
+  end
+
+  def set_user
+    @user = current_user
+  end
 end
