@@ -17,18 +17,21 @@
 
 		<%= f.input :surname %><br>
 	
-		<%= f.input :birthday, label: 'Date of birth' %><br>
+		<%= f.input :birthday,  start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, label: 'Date of birth' %><br>
 
 	<!-- Add paperclip to upload photos -->
 		<%= f.input :profile_photo, label: 'Link to your profile picture' %><br>
 
 	<!-- add more drop down options -->
 	<!-- find out how to "add another" -->
-		<%= f.input :talent, :collection => ['piano','violin','tenor','soprano','drums'] %><br>
+		<%= f.input :talent,:collection => ['piano','violin','tenor','soprano','drums'], prompt: "Select your talent" %><br>
 
 		<%= f.input :description, :as => :text, placeholder: 'Occupation, hobbies ...' %><br>
 	
 		<%= f.input :video, label: "Link(s) to Performance Videos" %><br>
+
+		<%= f.input :email, label: "Email address" %><br>
 	
 		<%= f.input :phone, label: "Phone number (optional)" %><br>
 
