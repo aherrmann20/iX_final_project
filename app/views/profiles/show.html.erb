@@ -1,2 +1,36 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<img src = "<%= @profile.profile_photo %>" width = 200px>
+
+<% if @profile.user == current_user %>
+	<%= link_to "Edit Personal Page", edit_profile_path(@profile) %>
+<% end %>
+
+<h1>
+	<strong>
+		<%= @profile.name %>
+		<%= @profile.surname %>
+	</strong>
+</h1>
+
+<h2>
+	<strong>Instruments/Voice Parts:</strong>
+	<%= @profile.talent %>
+</h2>
+
+<p>
+	<strong>Description:</strong>
+	<%= @profile.description %>
+</p>
+
+<p>
+	<strong>Talent samples:</strong>
+	<%= @profile.video %>
+</p>
+
+<p>
+	<strong>Contact info:</strong>
+	<%= @profile.email %>
+	<%= @profile.phone %>
+</p>
+
+<!-- Add rank -->
+
