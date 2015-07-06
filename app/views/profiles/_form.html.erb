@@ -12,45 +12,27 @@
 <% end %>
 
 <%= simple_form_for @profile do |f| %>
-	<p>
+
 		<%= f.input :name %><br>
-	</p>
 
-	<p>
 		<%= f.input :surname %><br>
-	</p>
-
-	<p>
-		<%= f.input :birthday, label: 'Date of birth' %>
-	</p>
+	
+		<%= f.input :birthday, label: 'Date of birth' %><br>
 
 	<!-- Add paperclip to upload photos -->
-	<p>
 		<%= f.input :profile_photo, label: 'Link to your profile picture' %><br>
-	</p>
 
 	<!-- add more drop down options -->
 	<!-- find out how to "add another" -->
+		<%= f.input :talent, :collection => ['piano','violin','tenor','soprano','drums'] %><br>
 
-	<p>
-		<%= f.select :talent, options_for_select(%w[piano violin tenor soprano drums])  %><br>
-	</p>
-
-	<p>
 		<%= f.input :description, :as => :text, placeholder: 'Occupation, hobbies ...' %><br>
-	</p>
-
-	<p>
+	
 		<%= f.input :video, label: "Link(s) to Performance Videos" %><br>
-	</p>
-
-	<p>
+	
 		<%= f.input :phone, label: "Phone number (optional)" %><br>
-	</p>
 
-	<p>
 		<%= f.button :submit %>
-	</p>
 <% end %>
 
 
