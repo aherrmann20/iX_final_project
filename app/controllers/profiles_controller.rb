@@ -50,7 +50,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:name, :surname, :instruments, :email, :description, :profile_photo)
+    params.require(:profile).permit(:name, :surname, :instruments, :email, :description, :profile_photo, talent_ids: [])
   end
 
   def set_user
