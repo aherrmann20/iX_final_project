@@ -1,5 +1,5 @@
 <% if @profile.user == current_user %>
-	<%= link_to "Edit Profile", edit_user_profile_path(current_user, @profile) %>
+	<%= link_to "Edit Profile", edit_profile_path(current_user, @profile) %>
 <% end %>
 
 <%= form_tag(talents_path, :method => "get", id: "search-form") do %>

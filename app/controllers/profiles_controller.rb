@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
-  before_action :set_user
 
   def index
+    @profiles = Profile.all
   end
 
   def new
@@ -10,21 +10,17 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(profile_params)
-    @profile.user = @user
+    @profile.user = current_user
 
     if @profile.save
-      redirect_to user_profile_path(current_user, @profile)
+      redirect_to profile_path(current_user, @profile)
     else
       render 'new'
     end
   end
 
   def show
-    if current_user.profile
-        @profile = Profile.find current_user.profile.id
-    else
-      redirect_to new_user_profile_path(current_user)
-    end
+    @profile = Profile.find params[:id]
   end
 
   def edit
@@ -35,7 +31,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find params[:id]
 
     if @profile.update(profile_params)
-      redirect_to user_profile_path(current_user, @profile), notice: "Your profile was successfully updated."
+      redirect_to profile_path(current_user, @profile), notice: "Your profile was successfully updated."
     else
       render 'edit'
     end
@@ -50,10 +46,6 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:name, :surname, :video, :phone, :birthday, :email, :description, :profile_photo, talent_ids: [])
-  end
-
-  def set_user
-    @user = current_user
+    params.require(:profile).permit(:name, :surname, :video, :phone, :birthday, :email, :description, :profile_photo, :user_id, talent_ids: [])
   end
 end
