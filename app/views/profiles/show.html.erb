@@ -9,7 +9,12 @@
 	</strong>
 </h1>
 
-<img src = "<%= @profile.profile_photo %>" width = 400px>
+<img src="<%= @profile.profile_photo %>" width="400px" >
+
+<p>
+	<strong>Date of Birth:</strong>
+	<%= @profile.birthday.strftime("%B %d, %Y") %>
+</p>
 
 <p>
 	<strong>Instruments/Voice Parts:</strong>
@@ -28,14 +33,13 @@
 </p>
 
 <p>
-	<strong>Talent samples:</strong>
-	<%= @profile.video %>
+	<strong>Talent sample:</strong>
+	<p><%= embed(@profile.video) %></p>
 </p>
 
 <p>
-	<strong>Contact info:</strong>
-	<%= @profile.email %>
-	<%= @profile.phone %>
+	<strong>Contact info:</strong> 
+	<%= @profile.email %> | <%= @profile.phone %>
 </p>
 
 <!-- Add rank -->
