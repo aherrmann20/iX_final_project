@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
-  
+
   root "profiles#show"
+
+  resources :talents
 
   resources :users, only: [] do
     resources :profiles
