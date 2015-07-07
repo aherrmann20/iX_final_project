@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707074604) do
-
-  create_table "profile_talents", id: false, force: :cascade do |t|
-    t.integer  "profile_id"
-    t.integer  "talent_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20150707082711) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +30,13 @@ ActiveRecord::Schema.define(version: 20150707074604) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "profiles_talents", id: false, force: :cascade do |t|
+    t.integer  "profile_id"
+    t.integer  "talent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "talents", force: :cascade do |t|
     t.string   "skill"
