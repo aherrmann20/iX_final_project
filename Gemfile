@@ -26,9 +26,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #adding authentication
 gem 'devise'
 
+#makes simple form
 gem 'simple_form'
 
+#rails console
 gem 'pry-rails'
+
+#bootstrap installation
+gem 'twitter-bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
