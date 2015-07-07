@@ -41,6 +41,12 @@ gem 'pry-rails'
 #bootstrap installation
 gem 'twitter-bootstrap-rails'
 
+# Font awesome
+gem 'font-awesome-rails'
+
+# Glyphicons
+gem 'bootstrap-glyphicons'
+
 #Chosen jquery plugin
 gem 'chosen-rails'
 

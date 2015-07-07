@@ -13,8 +13,12 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery.easing.min
 //= require twitter/bootstrap
 //= require chosen-jquery
+//= require jquery.fittext
+//= require wow.min
+//= require creative
 //= require turbolinks
 //= require_tree .
 
