@@ -1,6 +1,6 @@
 <h1>Talents Index</h1>
 
-<% form_tag(talents_path, :method => "get", id: "search-form") do %>
+<%= form_tag(talents_path, :method => "get", id: "search-form") do %>
 	<%= text_field_tag :search, params[:search], placeholder: "Search Instruments/Voice Part" %>
 	<%= submit_tag "Search", :name => nil %>
 <% end %>
