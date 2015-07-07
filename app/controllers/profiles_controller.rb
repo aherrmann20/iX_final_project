@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-      @profile = Profile.find params[:id]
+    @profile = Profile.find current_user.profile.id
   end
 
   def edit

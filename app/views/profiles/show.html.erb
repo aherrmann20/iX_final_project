@@ -1,7 +1,6 @@
-<img src = "<%= @profile.profile_photo %>" width = 200px>
 
 <% if @profile.user == current_user %>
-	<%= link_to "Edit Personal Page", edit_profile_path(@profile) %>
+	<%= link_to "Edit Profile", edit_profile_path(@profile) %>
 <% end %>
 
 <h1>
@@ -11,9 +10,11 @@
 	</strong>
 </h1>
 
-<h2>
+<img src = "<%= @profile.profile_photo %>" width = 400px>
+
+<p>
 	<strong>Instruments/Voice Parts:</strong>
-</h2>
+</p>
 
 <p>
 	<strong>Description:</strong>
