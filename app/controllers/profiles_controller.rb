@@ -13,14 +13,18 @@ class ProfilesController < ApplicationController
     @profile.user = @user
 
     if @profile.save
-      redirect_to @profile
+      redirect_to user_profile_path(current_user, @profile)
     else
       render 'new'
     end
   end
 
   def show
-    @profile = Profile.find current_user.profile.id
+    if current_user.profile
+        @profile = Profile.find current_user.profile.id
+    else
+      redirect_to new_user_profile_path(current_user)
+    end
   end
 
   def edit
@@ -31,7 +35,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find params[:id]
 
     if @profile.update(profile_params)
-      redirect_to @profile, notice: "Your profile was successfully updated."
+      redirect_to user_profile_path(current_user, @profile), notice: "Your profile was successfully updated."
     else
       render 'edit'
     end
