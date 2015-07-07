@@ -2,6 +2,11 @@
 	<%= link_to "Edit Profile", edit_user_profile_path(current_user, @profile) %>
 <% end %>
 
+<%= form_tag(talents_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Instruments/Voice Part" %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <h1>
 	<strong>
 		<%= @profile.name %>
