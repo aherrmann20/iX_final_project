@@ -14,7 +14,11 @@
 <p>
 	<strong>Instruments/Voice Parts:</strong>
 	<% @profile.talents.each do |talent| %>
-		<%= talent.skill %>, 
+		<% unless talent == @profile.talents.last %>
+			<%= talent.skill %>, 
+		<% else %>
+			<%= talent.skill %>
+		<% end %>
 	<% end %>
 </p>
 
