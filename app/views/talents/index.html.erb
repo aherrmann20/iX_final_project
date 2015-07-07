@@ -1,0 +1,16 @@
+<h1>Talents Index</h1>
+
+<% form_tag(talents_path, :method => "get", id: "search-form") do %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search Instruments/Voice Part" %>
+	<%= submit_tag "Search", :name => nil %>
+<% end %>
+
+<ul>
+	<% @talents.each do |talent| %>
+		<li>
+			<strong><%= link_to talent.skill, talent_path(talent) %></strong> |
+			<%= link_to "Edit", edit_talent_path(talent) %> |
+			<%= link_to "Destroy", talent_path(talent), :method => :delete, data: { confirm: "Are you sure you want to delete #{talent.skill}?"} %>
+		</li>
+	<% end %>
+</ul>
