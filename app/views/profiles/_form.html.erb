@@ -26,6 +26,11 @@
 	<!-- add more drop down options -->
 	<!-- find out how to "add another" -->
 
+		<%= f.association :talents, collection: Talent.all.map { |t| [t.skill, t.id] }, include_blank: true, input_html: {class: 'chosen-select'} %>
+	<!--
+	
+	-->
+
 		<%= f.input :description, :as => :text, placeholder: 'Occupation, hobbies ...' %><br>
 	
 		<%= f.input :video, label: "Link(s) to Performance Videos" %><br>
