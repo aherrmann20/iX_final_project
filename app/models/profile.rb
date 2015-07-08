@@ -4,6 +4,11 @@ class Profile < ActiveRecord::Base
 	has_many :ratings
 
 	def average_rating
-		(ratings.average(:rating) * 2).round / 2.0
+		if self.ratings.empty?
+			average_rating = -1
+		else
+			average_rating = (self.ratings.average(:rating) * 2).round / 2.0
+		end
+		average_rating
 	end
 end

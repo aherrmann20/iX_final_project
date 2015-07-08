@@ -13,14 +13,18 @@
 <img src="<%= @profile.profile_photo %>" width="400px" ></br>
 
 <p>
-  <%= link_to "Rate 1", rate_profile_path(@profile, rating: 1) %>
-  <%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
-  <%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
-  <%= link_to "Rate 4", rate_profile_path(@profile, rating: 4) %>
-  <%= link_to "Rate 5", rate_profile_path(@profile, rating: 5) %>
-  <% if @profile.average_rating != nil %>
-	  <%= @profile.average_rating %>
-  <% end %>
+	<%= link_to "Rate 1", rate_profile_path(@profile, rating: 1) %>
+	<%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
+	<%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
+	<%= link_to "Rate 4", rate_profile_path(@profile, rating: 4) %>
+	<%= link_to "Rate 5", rate_profile_path(@profile, rating: 5) %>
+
+	<% if @profile.average_rating == -1 %>
+  		Unrated
+  	<% else %>
+		<%= @profile.average_rating %>
+	<% end %>
+
 </p>
 
 <p>
