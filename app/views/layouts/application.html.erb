@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body id="page-top">
+<body id="page-top" <% if current_page? welcome_index_path %>class="no-padding"<% end %>>
 
 <%= render 'layouts/nav' %>
 

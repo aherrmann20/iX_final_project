@@ -1,13 +1,8 @@
-<% if user_signed_in? %>
-	<%= link_to "View My Profile", profile_path(current_user.profile) %>
-	<%= render "talents/search" %>
-<% end %>
-
 <header>
     <div class="header-content">
         <div class="header-content-inner">
             <h1>Treble&Bass</h1>
-            <hr>
+            <hr class="light">
             <p>A social media application connecting musicians of all levels and skillsets. </p>
             <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
         </div>
@@ -21,7 +16,7 @@
                 <h2 class="section-heading">We've got what you need!</h2>
                 <hr class="light">
                 <p class="text-faded">If you are looking for someone to perform professionally with you, or if you are simply looking to make some friends and organizing a few jam sessions, this is the app for you! </p>
-                <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                <%= link_to 'Get Started!', new_user_registration_path, class: 'btn btn-default btn-xl' %>
             </div>
         </div>
     </div>

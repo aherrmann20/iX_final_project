@@ -15,6 +15,18 @@
        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
            <ul class="nav navbar-nav navbar-right">
                <li>
+                  <div class="search_bar">
+                      <% if user_signed_in? %>
+                      <%= render "talents/search" %>
+                      <% end %>
+                  </div>
+                </li> 
+               <li>
+                    <% if user_signed_in? %>
+                      <%= link_to "View My Profile", profile_path(current_user.profile) %>
+                    <% end %>
+               </li>
+               <li>
                   <%= link_to 'Welcome Page', welcome_index_path %>
                </li> 
                <li>
