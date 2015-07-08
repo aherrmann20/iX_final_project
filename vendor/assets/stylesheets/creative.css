@@ -321,8 +321,9 @@ header .header-content .header-content-inner p {
     margin: 0 auto 20px;
 }
 
-.text-primary {
-    color: #2A4E6C;
+
+.text-secondary {
+    color: #778DA1;
 }
 
 .no-gutter > [class*=col-] {

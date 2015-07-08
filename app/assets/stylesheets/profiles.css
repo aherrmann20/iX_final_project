@@ -5,3 +5,7 @@ body {
 .search_bar {
 	padding-top: 10px;
 }
+
+#searchbox {
+	width: 215px;
+}
