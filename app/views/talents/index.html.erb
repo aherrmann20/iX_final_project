@@ -3,7 +3,7 @@
 <ul>
 	<% @talents.each do |talent| %>
 		<li>
-			<strong><%= link_to talent.skill.capitalize, profiles_path %></strong> 
+			<strong><%= link_to talent.skill.capitalize, talent_path(talent) %></strong> 
 			<!--
 			|
 			<%= link_to "Edit", edit_talent_path(talent) %> |
