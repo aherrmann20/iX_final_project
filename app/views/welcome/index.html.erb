@@ -1,3 +1,8 @@
+<% if user_signed_in? %>
+	<%= link_to "View My Profile", profile_path(current_user.profile) %>
+	<%= render "talents/search" %>
+<% end %>
+
 <header>
     <div class="header-content">
         <div class="header-content-inner">
@@ -8,10 +13,6 @@
         </div>
     </div>
 </header>
-
-<% if user_signed_in? %>
-	<%= link_to "View My Profile", profile_path(current_user.profile) %>
-<% end %>
 
 <section class="bg-primary" id="about">
     <div class="container">

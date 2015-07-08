@@ -4,10 +4,11 @@ class TalentsController < ApplicationController
 	end
 
 	def index
-		if params[:search]
-			@talents = Talent.search(params[:search]).order("created_at DESC")
-		else
-			@talents = Talent.all.order('created_at DESC')
-		end
+		@talents = Talent.all.order('created_at DESC')
+	end
+
+	def search
+		@talents = Talent.search(params[:search]).order("created_at DESC")
+		render :index
 	end
 end

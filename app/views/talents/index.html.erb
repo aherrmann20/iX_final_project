@@ -3,9 +3,12 @@
 <ul>
 	<% @talents.each do |talent| %>
 		<li>
-			<strong><%= link_to talent.skill, talent_path(talent) %></strong> |
+			<strong><%= link_to talent.skill.capitalize, profiles_path %></strong> 
+			<!--
+			|
 			<%= link_to "Edit", edit_talent_path(talent) %> |
 			<%= link_to "Destroy", talent_path(talent), :method => :delete, data: { confirm: "Are you sure you want to delete #{talent.skill}?"} %>
+			-->
 		</li>
 	<% end %>
 </ul>
