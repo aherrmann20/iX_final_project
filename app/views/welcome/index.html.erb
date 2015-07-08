@@ -9,6 +9,10 @@
     </div>
 </header>
 
+<% if user_signed_in? %>
+	<%= link_to "View My Profile", profile_path(current_user.profile) %>
+<% end %>
+
 <section class="bg-primary" id="about">
     <div class="container">
         <div class="row">
