@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   root "welcome#index"
-    get "talents/search/" => "talents#search"
-
+    get "talents/search" => "talents#search"
 
   resources :talents
-  resources :profiles
+  resources :profiles do 
+    member do
+      get 'rate'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -8,6 +8,18 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
+  # add route for this
+  # link_to rate_profile_path(@profile, rating: 2) 
+  # link_to rate_profile_path(@profile, rating: 3) 
+  # link_to rate_profile_path(@profile, rating: 4) 
+  def rate
+    @profile = Profile.find params[:id]
+    @rating = Rating.where(user: current_user, profile: @profile).first_or_initialize
+    @rating.update(rating: params[:rating])
+
+    redirect_to :back
+  end
+
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user

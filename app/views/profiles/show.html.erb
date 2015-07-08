@@ -14,6 +14,11 @@
 
 <img src="<%= @profile.profile_photo %>" width="400px" >
 
+  <%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
+  <%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
+  <% if @rating != nil %>
+	  <%= @profile.average_rating %>
+  <% end %>
 <p>
 	<strong>Date of Birth:</strong>
 	<%= @profile.birthday.strftime("%B %d, %Y") %>
