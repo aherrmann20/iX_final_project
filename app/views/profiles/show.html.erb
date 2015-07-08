@@ -1,4 +1,7 @@
 <div class="container">
+<% if @profile.user == current_user %>
+	<%= link_to "Edit Profile", edit_profile_path(current_user, @profile) %>
+<% end %>
 
 <h1>
 	<strong>
@@ -7,13 +10,19 @@
 	</strong>
 </h1>
 
-<img src="<%= @profile.profile_photo %>" width="400px" >
+<img src="<%= @profile.profile_photo %>" width="400px" ></br>
 
-  <%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
+<p>
+  <%= link_to "Rate 1", rate_profile_path(@profile, rating: 1) %>
   <%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
-  <% if @rating != nil %>
+  <%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
+  <%= link_to "Rate 4", rate_profile_path(@profile, rating: 4) %>
+  <%= link_to "Rate 5", rate_profile_path(@profile, rating: 5) %>
+  <% if @profile.average_rating != nil %>
 	  <%= @profile.average_rating %>
   <% end %>
+</p>
+
 <p>
 	<strong>Date of Birth:</strong>
 	<%= @profile.birthday.strftime("%B %d, %Y") %>
@@ -46,13 +55,5 @@
 </p>
 
 <!-- Add rank -->
-
-<% if @profile.user == current_user %>
-	<%= link_to 'Edit Profile', edit_profile_path(@profile), class: 'btn btn-default btn-xl' %>
-<% end %>
-<br>
-<br>
-<br>
-<br>
 
 </div>

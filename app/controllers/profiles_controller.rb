@@ -14,8 +14,8 @@ class ProfilesController < ApplicationController
   # link_to rate_profile_path(@profile, rating: 4) 
   def rate
     @profile = Profile.find params[:id]
-    @rating = Rating.where(user: current_user, profile: @profile).first_or_initialize
-    @rating.update(rating: params[:rating])
+    rating = Rating.where(user: current_user, profile: @profile).first_or_initialize
+    rating.update(rating: params[:rating])
 
     redirect_to :back
   end
