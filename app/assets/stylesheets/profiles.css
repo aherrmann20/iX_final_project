@@ -15,7 +15,8 @@ img {
 }
 
 #profile {
-      margin: 40px px 0px 0px;
+      margin: 0 auto;
+      display: table;
       border: 3px solid black;
       border-radius: 200px;
       width: 200px;
