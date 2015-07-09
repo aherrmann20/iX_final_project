@@ -23,7 +23,7 @@ end
 
 user = User.create! email: "nick_bruman@gmail.com", password: 'password', password_confirmation: 'password'
 
-Profile.create! user: user, birthday: Time.now, name: "Nick", surname: "Bruman", profile_photo: "http://upload.wikimedia.org/wikipedia/commons/c/cc/Ursynalia_2012,_Mastodon_03.jpg", description: "just living life, bru", video: "youtubelink.youtube.com", email: "email@email.com", phone: "333-333-3333" do |profile|
+Profile.create! user: user, birthday: Time.now, name: "Nick", surname: "Bruman", profile_photo: "http://upload.wikimedia.org/wikipedia/commons/c/cc/Ursynalia_2012,_Mastodon_03.jpg", description: "just living life, bru", video: "https://www.youtube.com/watch?v=sdpYRfPnhO0", email: "email@email.com", phone: "333-333-3333" do |profile|
 	profile.talents << Talent.find_or_create_by!(skill: "piano")
 	profile.talents << Talent.find_or_create_by!(skill: "drums")
 	profile.talents << Talent.find_or_create_by!(skill: "acoustic guitar")

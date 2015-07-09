@@ -253,6 +253,10 @@ header .header-content .header-content-inner p {
     }
 }
 
+header{
+    margin-top: -20px;
+}
+
 .section-heading {
     margin-top: 0;
     color: white;
