@@ -11,9 +11,16 @@ body {
 }
 
 img {
+  width: 20px;
+}
+
+#profile {
       margin: 40px px 0px 0px;
       border: 3px solid black;
       border-radius: 200px;
+      width: 200px;
     }
+
+
 
 
