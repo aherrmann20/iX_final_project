@@ -1,10 +1,6 @@
 body {
 	padding-top: 80px;
-	background: url(../img/sun.jpg) no-repeat bottom center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+	background: white;
 }
 .search_bar {
 	padding-top: 10px;
@@ -19,3 +15,5 @@ img {
       border: 3px solid black;
       border-radius: 200px;
     }
+
+
