@@ -60,11 +60,13 @@
 		<strong>Description:</strong>
 		<%= @profile.description %>
 	</p>
-
-	<p>
-		<strong>Talent sample:</strong>
-		<p><%= embed(@profile.video) %></p>
-	</p>
+	
+	<% if @profile.video %>
+		<p>
+			<strong>Talent sample:</strong>
+			<p><%= embed(@profile.video) %></p>
+		</p>
+	<% end %>
 
 	<p>
 		<strong>Contact info:</strong> 
