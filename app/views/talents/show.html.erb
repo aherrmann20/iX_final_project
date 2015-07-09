@@ -1,12 +1,12 @@
 <h1>
-	<strong>Users with this talent:</strong>
+	Users with this talent:
 </h1>
 
 <ul>
 	<% @talent.profiles.each do |profile| %>
-		<li>
-			<%= link_to profile.name, profile_path(profile) %>
-		</li>
+		<h2>
+			<strong><%= link_to profile.name, profile_path(profile) %></strong>
+		</h2>
 	<% end %>
 </ul>
 

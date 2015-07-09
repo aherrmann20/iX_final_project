@@ -2,13 +2,13 @@
 
 <ul>
 	<% @talents.each do |talent| %>
-		<li>
+	<h2>
 			<strong><%= link_to talent.skill.capitalize, talent_path(talent) %></strong> 
 			<!--
 			|
 			<%= link_to "Edit", edit_talent_path(talent) %> |
 			<%= link_to "Destroy", talent_path(talent), :method => :delete, data: { confirm: "Are you sure you want to delete #{talent.skill}?"} %>
 			-->
-		</li>
+	</h2>
 	<% end %>
 </ul>
