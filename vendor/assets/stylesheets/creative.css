@@ -56,6 +56,14 @@ p {
     background: rgba(165, 42, 42, 0.9);
 }
 
+.bg-secondary {
+    background: url(../img/sun.jpg) no-repeat bottom center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .bg-dark {
     color: #fff;
     background-color: #222;
