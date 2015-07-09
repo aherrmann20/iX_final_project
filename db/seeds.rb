@@ -11,6 +11,7 @@ puts "Creating users..."
 User.delete_all
 Profile.delete_all
 Talent.delete_all
+Rating.delete_all
 
 user = User.create! email: "email@email.com", password: "password", password_confirmation: 'password'
 
@@ -54,6 +55,17 @@ Talent.find_or_create_by!(skill: "accordion")
 Talent.find_or_create_by!(skill: "harmonica")
 Talent.find_or_create_by!(skill: "banjo")
 Talent.find_or_create_by!(skill: "mandolin")
+
+Rating.create! user: User.first, profile: Profile.first, rating: 5
+Rating.create! user: User.first, profile: Profile.first, rating: 4
+Rating.create! user: User.first, profile: Profile.first, rating: 3
+Rating.create! user: User.first, profile: Profile.first, rating: 4
+Rating.create! user: User.first, profile: Profile.first, rating: 2
+Rating.create! user: User.first, profile: Profile.first, rating: 2
+
+# p = Profile.first
+# p.ratings
+# p.average_rating 
 
 #something Josh did
 # profile.profile_talents.build(talent_id: Talent.first.id).save
