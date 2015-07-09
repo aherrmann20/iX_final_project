@@ -1,60 +1,69 @@
-<div class="container">
+<div class="col-md-4 col-md-offset-4">
 
-<h1>
-	<strong>
-		<%= @profile.name %>
-		<%= @profile.surname %>
-	</strong>
-</h1>
+	<div class="container">
 
-<img src="<%= @profile.profile_photo %>" width="400px" ></br>
+	<h1>
+		<strong>
+			<%= @profile.name %>
+			<%= @profile.surname %>
+		</strong>
+	</h1>
 
-<p>
-	<%= link_to "Rate 1", rate_profile_path(@profile, rating: 1) %>
-	<%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
-	<%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
-	<%= link_to "Rate 4", rate_profile_path(@profile, rating: 4) %>
-	<%= link_to "Rate 5", rate_profile_path(@profile, rating: 5) %>
 
-	<% if @profile.average_rating == -1 %>
-  		Unrated
-  	<% else %>
-		<%= @profile.average_rating %>
-	<% end %>
+	<img src="<%= @profile.profile_photo %>" width="400px" ><br>
+	<br>
 
-</p>
 
-<p>
-	<strong>Date of Birth:</strong>
-	<%= @profile.birthday.strftime("%B %d, %Y") %>
-</p>
-
-<p>
-	<strong>Instruments/Voice Parts:</strong>
-	<% @profile.talents.each do |talent| %>
-		<% unless talent == @profile.talents.last %>
-			<%= talent.skill %>, 
-		<% else %>
-			<%= talent.skill %>
+	<p>
+		<% if @profile.average_rating == -1 %>
+	  		Unrated
+	  	<% else %>
+	  		<strong>Average Rating:</strong> 
+			<%= @profile.average_rating %>
 		<% end %>
-	<% end %>
-</p>
+		
+		|
 
-<p>
-	<strong>Description:</strong>
-	<%= @profile.description %>
-</p>
+		<%= link_to "Rate 1", rate_profile_path(@profile, rating: 1) %>
+		<%= link_to "Rate 2", rate_profile_path(@profile, rating: 2) %>
+		<%= link_to "Rate 3", rate_profile_path(@profile, rating: 3) %>
+		<%= link_to "Rate 4", rate_profile_path(@profile, rating: 4) %>
+		<%= link_to "Rate 5", rate_profile_path(@profile, rating: 5) %>
 
-<p>
-	<strong>Talent sample:</strong>
-	<p><%= embed(@profile.video) %></p>
-</p>
+	</p>
 
-<p>
-	<strong>Contact info:</strong> 
-	<%= @profile.email %> | <%= @profile.phone %>
-</p>
+	<p>
+		<strong>Date of Birth:</strong>
+		<%= @profile.birthday.strftime("%B %d, %Y") %>
+	</p>
 
-<!-- Add rank -->
+	<p>
+		<strong>Instruments/Voice Parts:</strong>
+		<% @profile.talents.each do |talent| %>
+			<% unless talent == @profile.talents.last %>
+				<%= talent.skill %>, 
+			<% else %>
+				<%= talent.skill %>
+			<% end %>
+		<% end %>
+	</p>
 
+	<p>
+		<strong>Description:</strong>
+		<%= @profile.description %>
+	</p>
+
+	<p>
+		<strong>Talent sample:</strong>
+		<p><%= embed(@profile.video) %></p>
+	</p>
+
+	<p>
+		<strong>Contact info:</strong> 
+		<%= @profile.email %> | <%= @profile.phone %>
+	</p>
+
+	<!-- Add rank -->
+
+	</div>
 </div>

@@ -52,7 +52,8 @@ p {
 }
 
 .bg-primary {
-    background-color: #778DA1
+    padding: 60px;
+    background: rgba(165, 42, 42, 0.9);
 }
 
 .bg-dark {
@@ -89,7 +90,7 @@ aside {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: #2A4E6C;
+    color: #560000;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -107,12 +108,12 @@ aside {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #2A4E6C;
+    color: #560000;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #2A4E6C!important;
+    color: #560000!important;
     background-color: transparent;
 }
 
@@ -123,8 +124,8 @@ aside {
 
 @media(min-width:768px) {
     .navbar-default {
-        border-color: rgba(255,255,255,.3);
-        background-color: transparent;
+        border-color: rgba(255,255,255,.5);
+        background-color: rgba(165, 42, 42, 0.9);
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -405,9 +406,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    border-color: #778DA1;
+    border-color: #894D4D;
     color: #fff;
-    background-color: #778DA1;
+    background-color: #894D4D;
 }
 
 .btn-primary:active,

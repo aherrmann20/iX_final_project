@@ -3,7 +3,8 @@
         <div class="header-content-inner">
             <h1>Treble&Bass</h1>
             <hr class="light">
-            <p>A social media application connecting musicians of all levels and skillsets. </p>
+            <h2>A social media application connecting musicians of all levels. </h2> 
+            <br>
             <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
         </div>
     </div>
@@ -16,7 +17,9 @@
                 <h2 class="section-heading">We've got what you need!</h2>
                 <hr class="light">
                 <p class="text-faded">If you are looking for someone to perform professionally with you, or if you are simply looking to make some friends and organizing a few jam sessions, this is the app for you! </p>
-                <%= link_to 'Get Started!', new_user_registration_path, class: 'btn btn-default btn-xl' %>
+                <% unless user_signed_in? && current_user.profile %>
+                    <%= link_to 'Get Started!', new_user_registration_path, class: 'btn btn-default btn-xl' %>
+                <% end %>
             </div>
         </div>
     </div>
