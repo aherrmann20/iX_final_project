@@ -15,6 +15,7 @@
  *= require bootstrap/glyphicons
  *= require animate.min
  *= require creative
+ *= require chosen
  *= require_self
  */
 
