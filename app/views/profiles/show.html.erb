@@ -71,14 +71,19 @@
 	<% if @profile.video? %>
 		<p>
 			<strong>Talent sample:</strong>
-			<p><%= embed(@profile.video) %></p>
+			<p id><%= embed(@profile.video) %></p>
 		</p>
 	<% end %>
 
 	<% if @profile.email? || @profile.phone? %>
 		<p>
-			<strong>Contact info:</strong> 
-			<%= @profile.email %> | <%= @profile.phone %>
+			<strong>Contact info:</strong>
+				<% if @profile.email? %>
+					Email: <%= @profile.email %> 
+				<% end %>
+				<% if @profile.phone? %>
+					| Phone: <%= @profile.phone %>
+				<% end %>
 		</p>
 	<% end %>
 
