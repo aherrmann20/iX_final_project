@@ -1,6 +1,11 @@
 body {
 	padding-top: 80px;
-	background: white;
+	background: url(../img/wood.jpg) no-repeat bottom center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 }
 .search_bar {
 	padding-top: 10px;
