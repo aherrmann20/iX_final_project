@@ -56,22 +56,31 @@
 		<% end %>
 	</p>
 
-	<p>
-		<strong>Description:</strong>
-		<%= @profile.description %>
-	</p>
+	<% if @profile.description? %>
+		<p>
+			<strong>Description:</strong>
+			<%= @profile.description %>
+		</p>
+	<% else %>
+		<p><strong>
+		<%= @profile.name %>
+		has no description yet!
+		</strong></p>
+	<% end %>
 	
-	<% if @profile.video %>
+	<% if @profile.video? %>
 		<p>
 			<strong>Talent sample:</strong>
 			<p><%= embed(@profile.video) %></p>
 		</p>
 	<% end %>
 
-	<p>
-		<strong>Contact info:</strong> 
-		<%= @profile.email %> | <%= @profile.phone %>
-	</p>
+	<% if @profile.email? || @profile.phone? %>
+		<p>
+			<strong>Contact info:</strong> 
+			<%= @profile.email %> | <%= @profile.phone %>
+		</p>
+	<% end %>
 
 	<!-- Add rank -->
 
