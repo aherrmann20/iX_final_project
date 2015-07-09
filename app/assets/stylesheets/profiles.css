@@ -1,11 +1,10 @@
 body {
 	padding-top: 80px;
-	background: url(../img/greywall.jpg) no-repeat bottom center fixed;
+	background: url(../img/instruments.jpg) no-repeat bottom center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    color: black;
 }
 .search_bar {
 	padding-top: 10px;
