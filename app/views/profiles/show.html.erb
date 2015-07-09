@@ -79,10 +79,10 @@
 		<p>
 			<strong>Contact info:</strong>
 				<% if @profile.email? %>
-					Email: <%= @profile.email %> 
+					<%= @profile.email %> 
 				<% end %>
 				<% if @profile.phone? %>
-					| Phone: <%= @profile.phone %>
+					| <%= @profile.phone %>
 				<% end %>
 		</p>
 	<% end %>
