@@ -13,11 +13,10 @@ Profile.delete_all
 Talent.delete_all
 Rating.delete_all
 
-user = User.create! email: "email@email.com", password: "password", password_confirmation: 'password'
+user = User.create! email: "sienna_smith@gmail.com", password: "password", password_confirmation: 'password'
 
-Profile.create! user: user, birthday: Time.now, name: "Test", surname: "User", profile_photo: "http://upload.wikimedia.org/wikipedia/commons/c/cc/Ursynalia_2012,_Mastodon_03.jpg", description: "just living life, bru", video: "youtubelink.youtube.com", email: "email@email.com", phone: "333-333-3333" do |profile|
-	profile.talents << Talent.find_or_create_by!(skill: "piano")
-	profile.talents << Talent.find_or_create_by!(skill: "drums")
+Profile.create! user: user, birthday: Time.now, name: "Sienna", surname: "Smith", profile_photo: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQtY-n2Ykhx46UKeYbr8t9K2WBv0BHiHQcDBaqV9e2hdCnsJR4E", description: "I've been teaching myself guitar for three years now, but before that played viola for five. I love country music, so hit me up if you'd like to jam out or start a band!", video: "https://www.youtube.com/watch?v=VuNIsY6JdUw", email: "email@email.com", phone: "123-456-7890" do |profile|
+	profile.talents << Talent.find_or_create_by!(skill: "viola")
 	profile.talents << Talent.find_or_create_by!(skill: "acoustic guitar")
 end
 
@@ -35,6 +34,13 @@ Profile.create! user: user, birthday: Time.now, name: "Bob", surname: "Dole", pr
 	profile.talents << Talent.find_or_create_by!(skill: "trumpet")
 	profile.talents << Talent.find_or_create_by!(skill: "cello")
 	profile.talents << Talent.find_or_create_by!(skill: "acoustic violin")
+end
+
+user = User.create! email: "sarah@gmail.com", password: 'password', password_confirmation: 'password'
+
+Profile.create! user: user, birthday: Time.now, name: "Sarah", surname: "Besnainou", profile_photo: "http://i.imgur.com/zSuxVbi.jpg", description: "Hey ! I'm a rising senior in college, and I'm looking to improve my piano skills while making new friends. Link up with me !", email: "sarah@gmail.com", phone: "567-890-3333" do |profile|
+	profile.talents << Talent.find_or_create_by!(skill: "piano")
+	profile.talents << Talent.find_or_create_by!(skill: "guitar")
 end
 
 Talent.find_or_create_by!(skill: "trumpet")
