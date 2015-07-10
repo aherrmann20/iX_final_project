@@ -1,13 +1,29 @@
+<div class="container">
+
 <h1>
 	Users with this talent:
 </h1>
 
-<ul>
+<table style="width:40%">
+
 	<% @talent.profiles.each do |profile| %>
+	<tr>
+		<td>
 		<h2>
-			<strong><%= link_to profile.name, profile_path(profile) %></strong>
+			<strong><%= link_to profile.name, profile_path(profile) %></strong> 
 		</h2>
+		</td>
+		<td>
+		<h2>
+		  	<strong>Average Rating:</strong> 
+			<%= link_to profile.average_rating, profile_path(profile) %>
+		</h2>
+		</td>
+	</tr>
 	<% end %>
-</ul>
+</table>
+
+</div>
+
 
 

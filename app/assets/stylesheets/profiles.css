@@ -1,6 +1,6 @@
 body {
 	padding-top: 80px;
-	background: url(../img/wood.jpg) no-repeat bottom center fixed;
+	background: url(../img/brown.jpg) no-repeat bottom center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -23,9 +23,24 @@ img {
 #profile {
       margin: 0 auto;
       display: table;
-      border: 3px solid black;
-      border-radius: 200px;
-      width: 400px;
+      border: 1px solid black;
+      width: 350px;
+    }
+
+.rating {
+  text-align: center
+}
+
+h1 {
+    font-size: 300%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+p {
+    font-size: 100%;
 }
 
 
