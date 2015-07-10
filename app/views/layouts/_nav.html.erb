@@ -26,14 +26,18 @@
                 </li> 
            <% end %>
                <li>
-                    <% if user_signed_in? && current_user.profile %>
-                      <% if current_page? profile_path(current_user.profile) %>
-                        <%= link_to "Edit My Profile", edit_profile_path(current_user.profile) %>
+                    <% if user_signed_in? %>
+                      <% if current_user.profile %>
+                        <% if current_page? profile_path(current_user.profile) %>
+                          <%= link_to "Edit My Profile", edit_profile_path(current_user.profile) %>
+                        <% else %>
+                          <%= link_to "View My Profile", profile_path(current_user.profile) %>
+                        <% end %>
                       <% else %>
-                        <%= link_to "View My Profile", profile_path(current_user.profile) %>
+                        <%= link_to "Create Profile", new_profile_path %>
                       <% end %>
-                   
                     <% end %>
+
                </li>
                <% if current_page? root_path %>
                <li>
