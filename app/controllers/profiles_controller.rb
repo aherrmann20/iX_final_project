@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
     @profile.user = current_user
 
     if @profile.save
-      redirect_to profile_path(current_user, @profile)
+      redirect_to profile_path(@profile)
     else
       render 'new'
     end
