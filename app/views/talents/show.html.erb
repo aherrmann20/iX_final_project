@@ -16,7 +16,9 @@
 		<td>
 		<h2>
 		  	<strong>Average Rating:</strong> 
-			<%= link_to profile.average_rating, profile_path(profile) %>
+		  	<% unless profile.average_rating == -1 %>
+				<%= link_to profile.average_rating, profile_path(profile) %>
+			<% end %>
 		</h2>
 		</td>
 	</tr>
