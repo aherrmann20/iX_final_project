@@ -211,7 +211,7 @@ header .header-content .header-content-inner h1 {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
-    font-family:'Merriweather', cursive;
+    font-family:'Merriweather';
 }
 
 header .header-content .header-content-inner hr {
