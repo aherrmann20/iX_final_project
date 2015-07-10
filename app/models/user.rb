@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
 	         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-	has_one :profile, dependent: :destroy
+	has_one :profile
 	has_many :ratings
 
 	def self.from_omniauth(auth)
