@@ -8,10 +8,6 @@
 
 puts "Creating users..."
 
-User.delete_all
-Profile.delete_all
-Talent.delete_all
-Rating.delete_all
 
 user = User.create! email: "sienna_smith@gmail.com", password: "password", password_confirmation: 'password'
 
